@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+.pnpm/
+
+# Vite build output
+dist/
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Docker config files (optional)
+Dockerfile
+.dockerignore

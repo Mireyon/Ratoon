@@ -1,0 +1,140 @@
+.grimoire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F6EA; /* Fond beige */
+    position: relative;
+    padding: 0 1rem;
+}
+
+.container {
+    display: flex;
+}
+
+.right {
+    display: flex;
+    flex: 5;
+    margin-right: 3rem;
+    justify-content: center;
+}
+
+.left {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+    background: none;
+    border: none;
+}
+
+.title {
+    font-family: "Franklin Gothic Demi Cond", fantasy;
+    font-size: 20px !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 100%;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    padding: 5px 10px 10px 10px;
+    position: relative;
+    border: 0.1rem solid #CCAC86;
+    background-color: #FFFCF7;
+}
+
+.line {
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+    border-bottom: 0.1rem solid #CCAC86;
+}
+
+.text{
+    margin-left: 1rem;
+    font-family: "Franklin Gothic", fantasy;
+    color: #CCAC86;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: 2px;
+    height: 100%;
+    background-color: #CCAC86; /* Couleur assortie aux lignes */
+}
+
+.hole {
+    position: absolute;
+    left: 0.7rem;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #CCAC86;
+    border-radius: 50%;
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup {
+    background: #F9F6EA;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popupButtons {
+    margin-top: 10px;
+}
+
+
+.addBtn, .cancelBtn {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addBtn {
+    background-color: #79B546;
+    color: white;
+}
+
+.addButton {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: start;
+}
+
+.left:hover {
+    transform: scale(1.1);
+}
+
+.cancelBtn {
+    background-color: #E5745F;
+    color: white;
+}

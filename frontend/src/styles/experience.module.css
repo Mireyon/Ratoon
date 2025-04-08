@@ -1,0 +1,76 @@
+.appContainer {
+    display: flex; /* Flexbox pour organiser les éléments horizontalement */
+    background-color: #F9F6EA;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-between; /* Sépare les deux colonnes */
+    padding: 1rem 0;
+}
+
+.title {
+    font-family: "Franklin Gothic Demi Cond", fantasy;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Sépare les éléments aux extrémités */
+    align-items: end;
+    width: 100%; /* Assurez-vous que la largeur est prise en compte */
+    height: 3rem;
+    padding: 0 1rem; /* Ajoute du padding pour éviter que le texte touche les bords */
+    font-family: "Franklin Gothic", fantasy;
+}
+
+.left {
+    flex: 1; /* Occupe l'espace restant à gauche */
+    display: flex;
+}
+
+.right {
+    margin-left: 1rem;
+    width: 100%; /* Largeur fixe pour la page à droite */
+    height: 3rem; /* Prend toute la hauteur du conteneur parent (100vh ici) */
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    border: 0.1rem solid #CCAC86;
+    border-radius: 0.8rem;
+    background-color: #FFFCF7;
+}
+
+.slashLine {
+    position: absolute;
+    left: 40%;  /* Centre horizontalement */
+    top: 1.5rem;   /* Centre verticalement */
+    width: 50px;  /* Longueur de la ligne */
+    height: 2px;  /* Épaisseur de la ligne */
+    background-color: #CCAC86;  /* Couleur de la ligne */
+    transform: rotate(-55deg);  /* Inclinaison et recentrage */
+}
+
+.page button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.page span{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.page button:hover {
+    transform: scale(1.1);
+}
+
+.page button:active {
+    transform: scale(0.9);
+}

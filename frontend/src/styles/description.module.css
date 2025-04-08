@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    gap: 20px;
+    padding-left: 8vw;
+    margin-top: 17vh;
+    height: 15vh;
+}
+
+.photoContainer {
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    border: 0.1rem solid #CCAC86;
+    padding: 0.8rem;
+    background-color: #FFFCF7;
+    display: flex;
+}
+
+.fullHeightImage {
+    height: 100%;
+    width: auto; /* ← important ! */
+    object-fit: contain; /* ou remove complètement */
+    display: block;
+}
+
+.infoContainer {
+    font-family: "Franklin Gothic Demi Cond", fantasy;
+    width: 70%;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chaton-box {
+    border: 0.1rem solid #CCAC86;
+    border-radius: 1.5rem;
+    padding: 0.5rem 0.5rem;
+}
+
+.details-box {
+    border: 0.1rem solid #CCAC86;
+    padding: 0.7rem 0.5rem;
+    border-radius: 1.5rem;
+}
+
+.box {
+    border: 0.1rem solid #CCAC86;
+    padding: 0.2rem 1rem;
+    border-radius: 1.5rem;
+    background-color: #FFFCF7;
+}
+.variable {
+    padding: 0.5rem 0.5rem;
+    color: #CCAC86;
+    font-family: "Goudy Old Style", serif;
+    font-weight: bolder;
+}
+
+
+

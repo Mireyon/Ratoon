@@ -1,0 +1,21 @@
+{
+  "nomJoueuse" : "Dontille 🌸",
+  "imageName" : "Astrea.jpg",
+  "nomChaton" : "Astréa",
+  "enfance" : "Jeune noble",
+  "caractere" : "Orgueilleuse",
+  "donNaissance" : "Viatique familial",
+  "costaud" : 5,
+  "malin" : 6,
+  "mignon" : 5,
+  "coeur" : 1,
+  "amitie" : 2,
+  "or" : 1,
+  "argent" : 1,
+  "bronze" : 1,
+  "talents" : [ "Faire les poches", "Séduire et charmer", "Cuisiner" ],
+  "grimoire" : [ "Gosier sans fond / Costaud (2)" ],
+  "sacVoyage" : [ "Des vêtements chics", "Un shampoing spécial pelage délicat", "Une canne en marbre finement sculptée", "Un objet 'bling bling'" ],
+  "experienceActuelle" : 4,
+  "experienceTotale" : 55
+}

@@ -1,0 +1,21 @@
+{
+  "nomJoueuse" : "Alice 🌸",
+  "imageName" : "Ylda.jpg",
+  "nomChaton" : "Ylda",
+  "enfance" : "Enfant de soldat",
+  "caractere" : "Téméraire",
+  "donNaissance" : "Graine de héros",
+  "costaud" : 4,
+  "malin" : 2,
+  "mignon" : 2,
+  "coeur" : 6,
+  "amitie" : 2,
+  "or" : 0,
+  "argent" : 0,
+  "bronze" : 0,
+  "talents" : [ "Cuisiner", "Feuler et menacer" ],
+  "grimoire" : [ "Hardiesse / Costaud (1)", "Gosier sans fond / Costaud (2)" ],
+  "sacVoyage" : [ "Une armure", "Une lance de garde", "Baumes cicatrisnts pour guérir plus vite", "Une pipe et de l'herbe a pipe (volées au sergent)", "Sauce piquante pour mettre sur ses plats" ],
+  "experienceActuelle" : 0,
+  "experienceTotale" : 0
+}

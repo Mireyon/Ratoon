@@ -1,0 +1,225 @@
+.sac {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F6EA; /* Fond beige */
+    position: relative;
+    margin-top: 1rem;
+}
+
+.container {
+    display: flex;
+}
+
+.right {
+    display: flex;
+    flex: 5;
+    margin-right: 3rem;
+    justify-content: center;
+}
+
+.left {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    border: none;
+}
+
+.title {
+    font-family: "Franklin Gothic Demi Cond", fantasy;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    max-width: 100%;
+    font-size: 0.8rem;
+    border-radius: 5%;
+    position: relative;
+    border: 0.1rem solid #CCAC86;
+}
+
+.firstLine {
+    border-bottom: 0.1rem solid #CCAC86;
+    padding: 7px 0;
+    margin-bottom: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    overflow: hidden; /* Assure que le contenu suit le border-radius */
+}
+
+.text {
+    margin-left: 1rem;
+    font-family: "Franklin Gothic", fantasy;
+    color: #CCAC86;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.1rem solid #CCAC86;
+    margin: 0.2rem 0.2rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 1.5rem;
+    background-color: #FFFCF7;
+    min-height: 2rem;
+    font-size: 0.8rem;
+}
+
+.sacIconLeft {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    height: auto;
+}
+
+.sacIconRight {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    height: auto;
+}
+
+.description{
+    display: flex;
+    margin: 0.5rem 1rem;
+    text-align: center;
+    font-family: "Franklin Gothic", fantasy;
+}
+
+.addButton {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: start;
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup {
+    background: #F9F6EA;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    min-width: 300px;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    padding-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popupButtons {
+    margin-top: 10px;
+}
+
+.addBtn, .cancelBtn {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addBtn {
+    background-color: #79B546;
+    color: white;
+}
+
+.left:hover {
+    transform: scale(1.1);
+}
+
+.cancelBtn {
+    background-color: #E5745F;
+    color: white;
+}
+
+.editBtn,
+.deleteBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.editBtn:hover {
+    transform: scale(1.1);
+    color: #007bff;
+}
+
+.deleteBtn:hover {
+    transform: scale(1.1);
+    color: #d9534f;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.coinsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.coinBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #FFFCF7;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.coinBox span {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.coinBox button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.coinBox button:hover {
+    transform: scale(1.1);
+}
+
+.coinBox button:active {
+    transform: scale(0.9);
+}
+
+

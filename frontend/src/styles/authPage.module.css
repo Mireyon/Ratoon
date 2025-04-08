@@ -1,0 +1,95 @@
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    padding-top: 2.5rem;
+    font-family: "Franklin Gothic Demi Cond", fantasy;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.checkboxButton {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #CCAC86;
+    border-radius: 50rem;
+    display: inline-block;
+    position: relative;
+    background-color: #FFFCF7;
+}
+
+.checkboxButton:checked::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: #CCAC86;
+    border-radius: 50%;
+}
+
+body {
+    margin: 0; /* ✅ Évite tout espace supplémentaire */
+    overflow-x: hidden; /* ✅ Supprime la scrollbar horizontale */
+}
+
+.authContainer {
+    display: grid; /* Organisation en ligne */
+    background-color: #F9F6EA;
+    background-image: url('../assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center; /* Aligne en haut */
+    justify-items: center; /* Aligne en haut */
+    min-height: 100vh; /* ✅ Prend toute la hauteur de l'écran */
+    width: 100vw; /* ✅ Prend toute la largeur */
+    padding: 2.5rem;
+    box-sizing: border-box; /* ✅ Évite que le padding ajoute du scroll */
+}
+
+.button {
+    padding-left: 2.5rem;
+    background-color: #CCAC86;
+    color: #F9F6EA;
+    border: none;
+    font-size: 1rem;
+}
+
+.button:hover, .button:active {
+    transform: scale(1.1);
+    background-color: #F9F6EA;
+    color: #CCAC86;
+    border: 0.1rem solid #CCAC86;
+}
+
+.buttonContent {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espace entre le texte et l'icône */
+    position: relative;
+}
+
+.cat {
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.button:hover .cat {
+    opacity: 1; /* Affiché au survol */
+}
+
+@media screen and (max-width: 1024px) {
+    .cat {
+        opacity: 1
+    }
+}
