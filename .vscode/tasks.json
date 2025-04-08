@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Docker: Backend Build and Push",
+        "type": "shell",
+        "command": "powershell",
+        "args": [
+          "-Command",
+          "docker login; docker build -t backend ./backend; docker tag backend mireyon/ratoon-backend:latest; docker push mireyon/ratoon-backend:latest"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Docker: Frontend Build and Push",
+        "type": "shell",
+        "command": "powershell",
+        "args": [
+          "-Command",
+          "docker login; docker build -t frontend ./frontend; docker tag frontend mireyon/ratoon-frontend:latest; docker push mireyon/ratoon-frontend:latest"
+        ],
+        "group": "build",
+        "problemMatcher": []
+      }
+    ]
+  }
+  
