@@ -1,11 +1,12 @@
-import './styles/description.module.css'
 import styles from "./styles/authPage.module.css";
 import headerImage from './assets/header.png'
 import { Cat } from "lucide-react";
 import { InformationJoueuseDTO } from "./IInformationJoueuse.ts";
 import { getInfoJoueuseAPI } from "./ChatonAPI.tsx";
+import { useState, useEffect } from "react";
+import { getImageChatonAPI } from "./ChatonAPI";
 
-const JOUEUSES = ['Alice', 'Domitille', 'Marion', 'Rémy', 'Joséphine'];
+const JOUEUSES = ['Josephine', 'Alice', 'Domitille', 'Marion', 'Remy'];
 
 interface AuthPageProps {
     selectedJoueuse: string,
@@ -20,9 +21,18 @@ const AuthPage: React.FC<AuthPageProps> = ({
     setIsAuthentify,
     setInformationJoueuse,
 }) => {
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [images, setImages] = useState<(string | null)[]>(Array(JOUEUSES.length).fill(null));
 
-    const handleCheckboxChange = (name: string) => {
-        setSelectedJoueuse(name);
+
+    const handleSelect = (index: number) => {
+        if (selectedIndex === index) {
+            setSelectedIndex(null); // Deselect if already selected
+            setSelectedJoueuse(''); // Reset selectedJoueuse state
+            return;
+        }
+        setSelectedIndex(index); // Select the new index
+        setSelectedJoueuse(JOUEUSES[index]); // Update the selectedJoueuse state
     };
 
     const handleValidateJoueuse = async () => {
@@ -42,10 +52,27 @@ const AuthPage: React.FC<AuthPageProps> = ({
         }
     };
     
+    useEffect(() => {
+        const fetchAllImages = async () => {
+            try {
+                const imagePromises = JOUEUSES.map(async (joueuse) => {
+                    const info = await getInfoJoueuseAPI(joueuse);
+                    return await getImageChatonAPI(info.imageName);
+                });
+                const results = await Promise.all(imagePromises);
+                setImages(results);
+            } catch (error) {
+                console.error("Erreur lors du chargement des images :", error);
+            }
+        };
+    
+        fetchAllImages();
+    }, []);
+    
+
     return (
         <div className={styles.pageContainer}>
-            {/* Main Content */}
-            <header className={styles.header}>
+            <header className={styles.headerContainer}>
                 <img src={headerImage} alt="Header" className={styles.headerImage} />
             </header>
 
@@ -54,40 +81,24 @@ const AuthPage: React.FC<AuthPageProps> = ({
                     Veuillez sélectionner quelle joueuse vous êtes :
                 </div>
                 <div className={styles.imageGridContainer}>
-                    {/* Top center image */}
-                    <img src="https://picsum.photos/200/300" alt="Top" className={styles.topImage} />
+                    <div className={`${styles.imageBox} ${selectedIndex === 0 ? styles.selected : ''}`} onClick={() => handleSelect(0)}>
+                        <img className={styles.characterImage} src={images[0] || "https://via.placeholder.com/200x300"} alt="Grid 1" draggable="false"/>
+                    </div>
 
-                    {/* 2x2 grid images */}
                     <div className={styles.imageGrid}>
-                        <div className={styles.imageBox}>
-                            <img src="https://picsum.photos/200/300" alt="Grid 1" />
+                        <div className={`${styles.imageBox} ${selectedIndex === 1 ? styles.selected : ''}`} onClick={() => handleSelect(1)}>
+                            <img className={styles.characterImage} src={images[1] || "https://via.placeholder.com/200x300"} alt="Grid 2" draggable="false"/>
                         </div>
-                        <div className={styles.imageBox}>
-                            <img src="https://picsum.photos/200/300" alt="Grid 2" />
+                        <div className={`${styles.imageBox} ${selectedIndex === 2 ? styles.selected : ''}`} onClick={() => handleSelect(2)}>
+                            <img className={styles.characterImage} src={images[2] || "https://via.placeholder.com/200x300"} alt="Grid 3" draggable="false"/>
                         </div>
-                        <div className={styles.imageBox}>
-                            <img src="https://picsum.photos/200/300" alt="Grid 3" />
+                        <div className={`${styles.imageBox} ${selectedIndex === 3 ? styles.selected : ''}`} onClick={() => handleSelect(3)}>
+                            <img className={styles.characterImage} src={images[3] || "https://via.placeholder.com/200x300"} alt="Grid 4" draggable="false"/>
                         </div>
-                        <div className={styles.imageBox}>
-                            <img src="https://picsum.photos/200/300" alt="Grid 4" />
+                        <div className={`${styles.imageBox} ${selectedIndex === 4 ? styles.selected : ''}`} onClick={() => handleSelect(4)}>
+                            <img className={styles.characterImage} src={images[4] || "https://via.placeholder.com/200x300"} alt="Grid 5" draggable="false"/>
                         </div>
                     </div>
-                </div>
-
-
-                {/* <div className="joueusesList">
-                    {JOUEUSES.map((joueuse) =>
-                        <div key={joueuse} style={{ display: 'flex', gap: '1rem', padding: '0.7rem 0' }}>
-                            <input
-                                type="checkbox"
-                                className={styles.checkboxButton}
-                                id={joueuse}
-                                checked={selectedJoueuse.includes(joueuse)}
-                                onChange={() => handleCheckboxChange(joueuse)}
-                            />
-                            <span>{joueuse}</span>
-                        </div>)
-                    }
                 </div>
                 <div>
                     <button onClick={handleValidateJoueuse} className={styles.button}>
@@ -95,13 +106,8 @@ const AuthPage: React.FC<AuthPageProps> = ({
                             Valider qui je suis <span className={styles.cat}><Cat size={20} /></span>
                         </span>
                     </button>
-                </div> */}
+                </div>
             </div>
-
-            {/* Optional Footer */}
-            {/* <footer className={styles.footer}>
-                <p>© 2025 Les Chatonnes</p>
-            </footer> */}
         </div>
     );
 };

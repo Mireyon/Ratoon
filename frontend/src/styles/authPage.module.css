@@ -1,57 +1,31 @@
-#root {
+:root {
     height: 100%;
     width: 100%;
-}
-
-.title {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-family: "Franklin Gothic Demi Cond", fantasy;
-    font-size: 2rem;
-    word-wrap: break-word;
-    max-width: 90vw;
-}
-
-.joueusesList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem 0;
-    
-}
-
-.checkboxButton {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 2px solid #CCAC86;
-    border-radius: 50rem;
-    display: inline-block;
-    position: relative;
-    background-color: #FFFCF7;
-}
-
-.checkboxButton:checked::after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 12px;
-    height: 12px;
-    background-color: #CCAC86;
-    border-radius: 50%;
+    background-color: #EFDCBA;
 }
 
 body {
     margin: 0; /* ✅ Évite tout espace supplémentaire */
     overflow-x: hidden; /* ✅ Supprime la scrollbar horizontale */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EFDCBA;
+}
+
+.headerContainer {
+    width: 100vw;
+    max-width: 1000px;
+    height: auto;
 }
 
 .headerImage {
@@ -63,17 +37,70 @@ body {
     box-sizing: border-box;
 }
 
-
 .authContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #EFDCBA;
-    min-height: 100vh;
     width: 100vw;
+    height: 100vh;
     padding: 1rem;
-    box-sizing: border-box;
+    padding-bottom: 5rem;
     text-align: center;
+}
+
+.title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: "Delius", cursive;
+    color: #61462A;
+    font-weight: 800;
+    font-size: 2rem;
+    word-wrap: break-word;
+    max-width: 90vw;
+}
+
+.imageGridContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2.5rem;
+}
+
+.imageBox {
+    width: min(25vw, 25vh);  /* Same size as .topImage, relative to viewport width */
+    height: min(25vw, 25vh);  /* Ensure square aspect ratio */
+    object-fit: contain;
+    border-radius: 1.25rem;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 4px transparent solid;
+}
+
+.imageBox:hover {
+    border: 4px solid #CCAC86;
+    transition: border 0.3s ease-in-out;
+}
+
+.selected {
+    border: 4px solid #BD8A4A;
+    transition: border 0.3s ease-in-out;
+  }
+
+.characterImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
 }
 
 .button {
@@ -113,50 +140,4 @@ body {
     .cat {
         opacity: 1
     }
-}
-
-.imageGridContainer {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-}
-
-.topImage {
-    width: 30vw; /* Relative width based on viewport width */
-    height: 30vw; /* Same as width to maintain square aspect ratio */
-    object-fit: contain;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-    background-color: #fff;
-}
-
-.imageBox {
-    width: 30vw;  /* Same size as .topImage, relative to viewport width */
-    height: 30vw;  /* Ensure square aspect ratio */
-    object-fit: contain;
-    background-color: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.imageGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-    width: 100%;
-    max-width: 600px; /* Max width for the grid container */
-    margin: 0 auto; /* Center the grid */
-    align-items: center; /* Center items vertically */
-    justify-items: center; /* Center items horizontally */
-}
-
-.imageGrid img {
-    width: 100%;
-    height: 100%;  /* Ensures the image fills the box */
-    object-fit: contain;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
 }
