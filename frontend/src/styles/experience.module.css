@@ -1,58 +1,77 @@
 .appContainer {
-    width: 70%;
-    display: flex; /* Flexbox pour organiser les éléments horizontalement */
+    width: 90%;
+    display: flex;
     background-color: #F9F6EA;
     border-radius: 0.5rem;
     background-repeat: no-repeat;
     background-size: cover;
-    justify-content: space-between; /* Sépare les deux colonnes */
-    padding: 1rem;
+    padding: 1rem 1.5rem 1rem 1rem; /* Augmentation du padding droit */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem auto;
+    align-items: center;
+    overflow: hidden; /* Empêche tout débordement des enfants */
 }
 
 .title {
     font-family: "Franklin Gothic Demi Cond", fantasy;
-    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+    color: #7B5E45;
 }
 
 .page {
     position: relative;
     display: flex;
-    justify-content: space-between; /* Sépare les éléments aux extrémités */
-    align-items: end;
-    width: 100%; /* Assurez-vous que la largeur est prise en compte */
-    height: 3rem;
-    padding: 0 1rem; /* Ajoute du padding pour éviter que le texte touche les bords */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
     font-family: "Franklin Gothic", fantasy;
+    gap: 2rem;
 }
 
 .left {
-    flex: 1; /* Occupe l'espace restant à gauche */
+    flex: 0 0 auto;
     display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    min-width: 100px; /* Assure une largeur minimale */
 }
 
 .right {
-    margin-left: 1rem;
-    width: 100%; /* Largeur fixe pour la page à droite */
-    height: 3rem; /* Prend toute la hauteur du conteneur parent (100vh ici) */
+    flex: 1;
+    max-width: calc(100% - 120px); /* Évite que right ne déborde */
+    padding: 0.5rem;
+    margin-right: 0.5rem; /* Ajout d'une marge à droite */
     display: flex;
-    justify-content: center; /* Centre le contenu horizontalement */
-    align-items: center; /* Centre le contenu verticalement */
+    justify-content: center;
+    align-items: center;
     border: 0.1rem solid #CCAC86;
     border-radius: 0.8rem;
     background-color: #FFFCF7;
+    box-shadow: inset 0 1px 3px rgba(204, 172, 134, 0.2);
 }
 
 .slashLine {
     position: absolute;
-    left: 40%;  /* Centre horizontalement */
-    top: 1.5rem;   /* Centre verticalement */
-    width: 50px;  /* Longueur de la ligne */
-    height: 2px;  /* Épaisseur de la ligne */
-    background-color: #CCAC86;  /* Couleur de la ligne */
-    transform: rotate(-55deg);  /* Inclinaison et recentrage */
+    left: 50%;
+    top: 50%;
+    width: 1px;
+    height: 70%;
+    background: linear-gradient(to bottom, 
+        rgba(204, 172, 134, 0), 
+        rgba(204, 172, 134, 0.7) 15%, 
+        rgba(204, 172, 134, 0.9) 50%, 
+        rgba(204, 172, 134, 0.7) 85%, 
+        rgba(204, 172, 134, 0)
+    );
+    transform: translate(-50%, -50%);
+    border-radius: 1px;
+    box-shadow: 0 0 3px rgba(204, 172, 134, 0.3);
 }
 
 .page button {
@@ -63,7 +82,7 @@
     transition: transform 0.2s ease;
 }
 
-.page span{
+.page span {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -75,4 +94,57 @@
 
 .page button:active {
     transform: scale(0.9);
+}
+
+.experienceCounter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 45%;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #7B5E45;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.actionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0E6D2;
+    border: 1px solid #CCAC86;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #7B5E45;
+}
+
+.actionButton:hover {
+    background-color: #E6D7BA;
+    transform: scale(1.1);
+}
+
+.actionButton:active {
+    transform: scale(0.95);
+}
+
+.value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    min-width: 2rem;
+    text-align: center;
+    color: #5A432F;
 }

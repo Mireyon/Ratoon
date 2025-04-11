@@ -53,52 +53,35 @@ const Experience: React.FC<ExperienceProps> = ({informationJoueuse, setInformati
             <div className={style.right}>
                 <div className={style.page}>
                     <div className={style.slashLine}></div>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            alignSelf: 'start',
-                            left: '25%',
-                            padding: '1%',
-                            cursor: 'pointer',
-                            color: '#CCAC86',
-                            fontFamily: 'Goudy Old Style',
-                            fontWeight: 'bold',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                        }}
-                    >
-                        <button onClick={handleActuelleMinusOne}><Minus size={16}/></button>
-                        <span>{informationJoueuse?.experienceActuelle}</span>
-                        <button onClick={handleActuellePlusOne}><Plus size={16}/></button>
+                    
+                    <div className={style.experienceCounter}>
+                        <div className={style.label}>Actuelle</div>
+                        <div className={style.controls}>
+                            <button onClick={handleActuelleMinusOne} className={style.actionButton}>
+                                <Minus size={16} />
+                            </button>
+                            <span className={style.value}>{informationJoueuse?.experienceActuelle}</span>
+                            <button onClick={handleActuellePlusOne} className={style.actionButton}>
+                                <Plus size={16} />
+                            </button>
+                        </div>
                     </div>
 
-                    <div
-                        style={{
-                            position: 'absolute',
-                            alignSelf: 'end',
-                            right: '30%',
-                            padding: '1%',
-                            cursor: 'pointer',
-                            color: '#CCAC86',
-                            fontFamily: 'Goudy Old Style',
-                            fontWeight: 'bold',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                        }}
-                    >
-                        <button onClick={handleTotaleMinusOne}><Minus size={16}/></button>
-                        <span>{informationJoueuse?.experienceTotale}</span>
-                        <button onClick={handleTotalePlusOne}><Plus size={16}/></button>
+                    <div className={style.experienceCounter}>
+                        <div className={style.label}>Totale</div>
+                        <div className={style.controls}>
+                            <button onClick={handleTotaleMinusOne} className={style.actionButton}>
+                                <Minus size={16} />
+                            </button>
+                            <span className={style.value}>{informationJoueuse?.experienceTotale}</span>
+                            <button onClick={handleTotalePlusOne} className={style.actionButton}>
+                                <Plus size={16} />
+                            </button>
+                        </div>
                     </div>
-
-                    <div style={{textAlign: 'start'}}>Actuelle</div>
-                    <div style={{textAlign: 'end'}}>Totale</div>
                 </div>
             </div>
         </div>
-
     );
 };
 
