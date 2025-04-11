@@ -1,10 +1,12 @@
 .appContainer {
+    width: 70%;
     display: flex; /* Flexbox pour organiser les éléments horizontalement */
     background-color: #F9F6EA;
+    border-radius: 0.5rem;
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: space-between; /* Sépare les deux colonnes */
-    padding: 1rem 0;
+    padding: 1rem;
 }
 
 .title {

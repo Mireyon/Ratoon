@@ -43,11 +43,19 @@ const ChatonDescription: React.FC<ChatonDescriptionProps> = ({informationJoueuse
                 </div>
             </div>
             <div className={styles.photoContainer}>
-                <img
-                    src={imageSrc}
-                    alt="Chaton ou joueuse"
-                    className={styles.fullHeightImage}
-                />
+                {imageSrc ? (
+                    <img
+                        src={imageSrc}
+                        alt="Chaton ou joueuse"
+                        className={styles.fullHeightImage}
+                    />
+                ) : (
+                    <img
+                        src={undefined}
+                        alt="Chaton ou joueuse"
+                        className={styles.fullHeightImage}
+                    />
+                )}
             </div>
         </div>
     );

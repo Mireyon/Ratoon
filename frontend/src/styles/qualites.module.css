@@ -1,13 +1,12 @@
 .container {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
-    padding-left: 7rem;
 }
 
 .title{
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-family: "Franklin Gothic Demi Cond", fantasy;
     font-size: 30px;
 }

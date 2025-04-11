@@ -44,4 +44,32 @@ export interface GrimoireItem {
     { label: "Sentir la route / Mignon (3)", id: 36 },
 
   ];
+
+  export const talentsOptions = [
+    { label: "Bouger son popotin", id: 1 },
+    { label: "Bricoler des trucs et des machins", id: 2 },
+    { label: "Connaître les lois et les légendes", id: 3 },
+    { label: "Connaître les pays et les peuples", id: 4 },
+    { label: "Convaincre et baratiner", id: 5 },
+    { label: "Cueuillir et chasser", id: 6 },
+    { label: "Cuisiner", id: 7 },
+    { label: "Dessiner et peindre", id: 8 },
+    { label: "Faire de la musique", id: 9 },
+    { label: "Faire les poches", id: 10 },
+    { label: "Feuler et menacer", id: 11 },
+    { label: "Griffer", id: 12 },
+    {label: "Herboriser", id: 13 },
+
+    { label: "Lire et écrire", id: 14 },
+    { label: "Lire le ciel et les étoiles", id: 15 },
+    { label:"Observer et fouiller" , id: 16 },
+    { label: "Rester calme et impassible", id: 17 },
+    { label: "S'occuper des bêtes", id: 18 },
+    { label: "Se cacher dans les ombres", id: 19 },
+    { label: "Se déplacer en silence", id: 20 },
+    { label: "Séduire et charmer", id: 21 },
+    { label: "Soigner blessures et maladies", id: 22 },
+    { label: "Trouver son chemin", id: 23 },
+    { label: "Trouver une information", id: 24 },
+  ];
   

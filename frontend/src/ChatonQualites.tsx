@@ -43,7 +43,7 @@ const ChatonQualites: React.FC<ChatonQualitesProps> = ({informationJoueuse, setI
                         quality: 'coeur',
                         Component: Heart,
                         color: '#DFB5D3',
-                        style: {paddingLeft: '4rem'}
+                        style: {paddingLeft: '2rem'}
                     },
                     {label: 'Amitié', quality: 'amitie', Component: Amitie, color: '#FBB944'}
                 ].map(({label, quality, Component, color, style: additionalStyle}, index) => (

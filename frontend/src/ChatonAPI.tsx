@@ -25,7 +25,7 @@ export async function putInfoJoueuseAPI(nomJoueuse: string, infoJoueuse: Informa
     if (!response.ok) {
         throw new Error("Erreur lors de la mise à jour des données du chaton");
     }
-    return await response.json();
+    return response.status;
 }
 
 export async function getImageChatonAPI(name: string): Promise<any> {

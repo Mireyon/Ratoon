@@ -1,6 +1,7 @@
 .sac {
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
     align-items: center;
     background-color: #F9F6EA; /* Fond beige */
     position: relative;
@@ -37,7 +38,7 @@
 .page {
     max-width: 100%;
     font-size: 0.8rem;
-    border-radius: 5%;
+    border-radius: 1rem;
     position: relative;
     border: 0.1rem solid #CCAC86;
 }
@@ -46,8 +47,7 @@
     border-bottom: 0.1rem solid #CCAC86;
     padding: 7px 0;
     margin-bottom: 1rem;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-radius: 1rem;
     overflow: hidden; /* Assure que le contenu suit le border-radius */
 }
 

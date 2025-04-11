@@ -41,21 +41,6 @@ body {
   overflow-x: hidden; /* ✅ Supprime la scrollbar horizontale */
 }
 
-
-.appContainer{
-  display: flex;  /* Organisation en ligne */
-  background-color: #F9F6EA;
-  background-image: url('../assets/background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: center; /* Aligne en haut */
-  justify-items: center; /* Aligne en haut */
-  min-height: 100vh; /* ✅ Prend toute la hauteur de l'écran */
-  width: 100%; /* ✅ Prend toute la largeur */
-  padding: 2.5rem;
-  box-sizing: border-box; /* ✅ Évite que le padding ajoute du scroll */
-}
-
 .leftContainer {
   flex: 1.65; /* Occupe l'espace restant à gauche */
   display: flex;

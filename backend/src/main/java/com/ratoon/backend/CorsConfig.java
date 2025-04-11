@@ -14,11 +14,17 @@ public class CorsConfig implements WebMvcConfigurer {
         if (frontendUrl != null && !frontendUrl.isEmpty()) {
             registry.addMapping("/**") // Allow all endpoints
                     .allowedOrigins(frontendUrl) // Use the environment variable for the frontend's origin
-                    .allowedMethods("GET", "POST", "PUT", "DELETE") // Allow specific HTTP methods
-                    .allowedHeaders("*"); // Allow all headers
+                    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow specific HTTP methods
+                    .allowedHeaders("*") // Allow all headers
+                    .allowCredentials(true); // Add this line to enable credentials
         } else {
             // Handle the case where the environment variable is not set
             System.out.println("Frontend URL environment variable not set.");
+            registry.addMapping("/**") // Allow all endpoints
+                .allowedOrigins("http://localhost:5173") // Fallback to localhost for development
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow specific HTTP methods
+                .allowedHeaders("*") // Allow all headers
+                .allowCredentials(true); // Add this line to enable credentials
         }
     }
 }

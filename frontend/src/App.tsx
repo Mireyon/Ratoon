@@ -7,11 +7,14 @@ import InterfaceJoueuse from "./InterfaceJoueuse.tsx";
 import AuthPage from "./AuthPage.tsx";
 import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
 import { putInfoJoueuseAPI } from './ChatonAPI.tsx';
+import ChatBox from './ChatBox';
+import { canSendMessage as checkChatConnection } from './chat';
 
 const App: React.FC = () => {
     const [selectedJoueuse, setSelectedJoueuse] = useState<string>('');
     const [isAuthentify, setIsAuthentify] = useState<boolean>(false);
     const [informationsJoueuse, setInformationJoueuse] = useState<InformationJoueuseDTO | null>(null);
+    const [username, setUsername] = useState<string>("user1");  // Default username, could be set from auth
 
     useEffect(() => {
         const saveInfoJoueuse = async () => {
@@ -25,50 +28,74 @@ const App: React.FC = () => {
         };
 
         saveInfoJoueuse();
-    }
-    , [informationsJoueuse]);
-        
+    }, [informationsJoueuse]);
+    
+    // Simple username input for demo purposes (in real app would be from auth)
+    const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUsername(e.target.value);
+    };
 
     return (
-        <Router>
-            <Routes>
-                {/* Page d'authentification et de sélection de la joueuse */}
-                <Route path="/" element={
-                    !isAuthentify ? (
-                        <AuthPage
-                            selectedJoueuse={selectedJoueuse}
-                            setSelectedJoueuse={setSelectedJoueuse}
-                            setInformationJoueuse={setInformationJoueuse}
-                            setIsAuthentify={setIsAuthentify}
-                        />
-                    ) : (
-                        // Redirige l'utilisateur après authentification
-                        <Navigate to={selectedJoueuse === "Joséphine" ? "/MJ" : "/joueuse"}/>
-                    )
-                }/>
+        //     <header className={styles.appHeader || ''}>
+        //         <h1>Ratoon Chat</h1>
+        //         <div className={styles.connectionStatus || ''} style={{ color: checkChatConnection() ? "green" : "red", margin: "10px 0" }}>
+        //             {checkChatConnection() ? "✓ Connected" : "⚠ Connecting..."}
+        //         </div>
+        //     </header>
+        
+        //     <div className={styles.userSection || ''} style={{ margin: "20px 0", padding: "10px", backgroundColor: "#f5f5f5" }}>
+        //         <label htmlFor="username">Your username: </label>
+        //         <input 
+        //             id="username"
+        //             type="text" 
+        //             value={username} 
+        //             onChange={handleUsernameChange}
+        //             style={{ padding: "8px", marginLeft: "10px" }}
+        //         />
+        //     </div>
+        
+        //     <main>
+        //         <ChatBox currentUser={username} />
+        //     </main>
+        
+        <div>
+            <Router>
+                <Routes>
+                    <Route path="/" element={
+                        !isAuthentify ? (
+                            <AuthPage
+                                selectedJoueuse={selectedJoueuse}
+                                setSelectedJoueuse={setSelectedJoueuse}
+                                setInformationJoueuse={setInformationJoueuse}
+                                setIsAuthentify={setIsAuthentify}
+                            />
+                        ) : (
+                            <Navigate to={selectedJoueuse === "Joséphine" ? "/MJ" : "/joueuse"}/>
+                        )
+                    }/>
 
-                {/* Interface de Joséphine - accessible uniquement si elle est authentifiée et sélectionnée */}
-                <Route path="/MJ" element={
-                    isAuthentify && selectedJoueuse === "Joséphine" ? (
-                        <div className={styles.authContainer}>
-                            <InterfaceMJ/>
-                        </div>
-                    ) : (
-                        <Navigate to="/"/> // Redirige vers la page de sélection si non authentifié ou mauvaise joueuse
-                    )
-                }/>
+                    <Route path="/MJ" element={
+                        isAuthentify && selectedJoueuse === "Joséphine" ? (
+                            <div className={styles.authContainer}>
+                                <InterfaceMJ/>
+                            </div>
+                        ) : (
+                            <Navigate to="/"/>
+                        )
+                    }/>
 
-                {/* Interface de la joueuse - accessible à toutes sauf Joséphine */}
-                <Route path="/joueuse" element={
-                    isAuthentify && selectedJoueuse && selectedJoueuse !== "Joséphine" ? (
-                        <InterfaceJoueuse informationsJoueuse={informationsJoueuse}
-                                          setInformationJoueuse={setInformationJoueuse}/>
-                    ) : (
-                        <Navigate to="/"/> // Si aucune joueuse n'est sélectionnée, redirige vers la page de sélection
-                    )
-                }/>
-            </Routes>
-        </Router>
+                    <Route path="/joueuse" element={
+                        isAuthentify && selectedJoueuse && selectedJoueuse !== "Joséphine" ? (
+                            <InterfaceJoueuse informationsJoueuse={informationsJoueuse}
+                                              setInformationJoueuse={setInformationJoueuse}/>
+                        ) : (
+                            <Navigate to="/"/>
+                        )
+                    }/>
+                </Routes>
+            </Router>
+           
+        </div>
     );
 }
 

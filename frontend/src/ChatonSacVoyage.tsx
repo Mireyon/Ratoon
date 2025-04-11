@@ -174,7 +174,7 @@ const ChatonSacVoyage: React.FC<ChatonSacVoyageProps> = ({informationJoueuse, se
                 <div className={`${style.title} ${style.firstLine} ${style.container}`}>
                     <span className={style.infoContainer}>
                        <button onClick={() => setShowPopup(true)} className={style.left}>
-                           <PackagePlus color="#CCAC86" size={20}/>
+                           <PackagePlus color="#6B89BE" size={20}/>
                        </button>
                     </span>
                     <span className={style.right}>Sac de voyage</span>

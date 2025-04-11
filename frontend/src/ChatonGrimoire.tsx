@@ -15,7 +15,7 @@ interface ChatonGrimoireProps {
 const ChatonGrimoire: React.FC<ChatonGrimoireProps> = ({ informationJoueuse, setInformationJoueuse }) => {
     const [showPopup, setShowPopup] = useState(false);
     const [newItem, setNewItem] = useState("");
-    const minLines = 8;
+    const minLines = 3;
 
     const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -70,7 +70,7 @@ const ChatonGrimoire: React.FC<ChatonGrimoireProps> = ({ informationJoueuse, set
                 <div className={`${style.line} ${style.title} ${style.container}`}>
                     <span className={style.infoContainer}>
                         <button onClick={() => setShowPopup(true)} className={style.left}>
-                            <PackagePlus color="#CCAC86" size={20} />
+                            <PackagePlus color="#6B89BE" size={20} />
                         </button>
                     </span>
                     <span className={style.right}>Grimoire</span></div>

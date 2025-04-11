@@ -1,5 +1,5 @@
 {
-  "nomJoueuse" : "Rémy 🌸",
+  "nomJoueuse" : "Joséphine",
   "imageName" : "Astrea.jpg",
   "nomChaton" : "",
   "enfance" : "",
@@ -13,9 +13,9 @@
   "or" : 0,
   "argent" : 0,
   "bronze" : 0,
-  "talents" : [],
-  "grimoire" : [],
-  "sacVoyage" : [],
+  "talents" : [ ],
+  "grimoire" : [ ],
+  "sacVoyage" : [ ],
   "experienceActuelle" : 0,
   "experienceTotale" : 0
 }
