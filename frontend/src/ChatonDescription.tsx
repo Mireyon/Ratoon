@@ -47,7 +47,6 @@ const ChatonDescription: React.FC<ChatonDescriptionProps> = ({informationJoueuse
                     <img
                         src={imageSrc}
                         alt="Chaton ou joueuse"
-                        style={{borderRadius: '1rem'}}
                         className={styles.fullHeightImage}
                     />
                 ) : (

@@ -11,7 +11,7 @@ import {InformationJoueuseDTO} from "./IInformationJoueuse.ts";
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle } from 'lucide-react';
 import ChatBox from './ChatBox.tsx';
-import { connectChat, canSendMessage } from './chat';
+import { connectChat, canSendMessage, reconnectChat } from './chat';
 
 interface InterfaceJoueuseProps {
     informationsJoueuse?: InformationJoueuseDTO | null
@@ -32,9 +32,9 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [hasUnreadMessages, setHasUnreadMessages] = useState(false);
     const [connectionStatus, setConnectionStatus] = useState(false);
-    const connectionAttempts = useRef(0);
     const processedMessageIds = useRef<Set<string>>(new Set());
     const currentUser = informationsJoueuse?.nomJoueuse || '';
+    const lastConnectionCheck = useRef<number>(Date.now());
 
     // Effect to disable scrolling when modal is open
     useEffect(() => {
@@ -101,29 +101,47 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
         
         // Check connection status periodically
         const intervalId = setInterval(() => {
+            const now = Date.now();
             const connected = canSendMessage();
             setConnectionStatus(connected);
             
-            // If not connected after multiple attempts, try reconnecting
-            if (!connected) {
-                connectionAttempts.current += 1;
-                if (connectionAttempts.current > 5) {
-                    console.log("Attempting to reconnect chat...");
-                    connectChat(handleNewMessage, currentUser);
-                    connectionAttempts.current = 0;
-                }
-            } else {
-                connectionAttempts.current = 0;
+            // If not connected, attempt to reconnect using our new reconnection system
+            if (!connected && (now - lastConnectionCheck.current > 10000)) { // Only try explicit reconnection every 10 seconds
+                console.log("WebSocket disconnected, attempting to reconnect...");
+                reconnectChat(); // Use our new reconnection function
+                lastConnectionCheck.current = now;
+            } else if (connected) {
+                // Reset last check time when connected
+                lastConnectionCheck.current = now;
             }
         }, 2000);
         
+        // Add visibility change listener to reconnect when tab becomes visible again
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'visible') {
+                const connected = canSendMessage();
+                if (!connected) {
+                    console.log("Page became visible, checking WebSocket connection...");
+                    reconnectChat();
+                }
+            }
+        };
+        
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        
         return () => {
             clearInterval(intervalId);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, [currentUser, isModalOpen]);
 
     const openModal = () => {
         setIsModalOpen(true);
+        
+        // Check and attempt reconnection when opening the chat modal
+        if (!connectionStatus) {
+            reconnectChat();
+        }
     };
 
     const closeModal = () => {
@@ -167,6 +185,7 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
                                 connectionStatus={connectionStatus}
                                 processedMessageIds={processedMessageIds}
                             />
+                            {/* Automatic reconnection is handled by the useEffect */}
                         </div>
                     </div>
                 </div>
