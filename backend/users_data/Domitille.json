@@ -1,21 +1,28 @@
 {
-  "nomJoueuse" : "Domitille",
-  "imageName" : "Astrea.jpg",
-  "nomChaton" : "Astréa",
-  "enfance" : "Jeune noble",
-  "caractere" : "Orgueilleuse",
-  "donNaissance" : "Viatique familial",
-  "costaud" : 5,
-  "malin" : 6,
-  "mignon" : 5,
-  "coeur" : 1,
-  "amitie" : 2,
-  "or" : 0,
-  "argent" : 0,
-  "bronze" : 0,
-  "talents" : [ "Bricoler des trucs et des machins" ],
-  "grimoire" : [ "Motte de terre / Costaud (1)" ],
-  "sacVoyage" : [ "Des vêtements chics", "Un shampoing spécial pelage délicat", "Une canne en marbre finement sculptée", "Un objet 'bling bling'" ],
-  "experienceActuelle" : 4,
-  "experienceTotale" : 55
+  "nomJoueuse": "Domitille",
+  "imageName": "Astrea.jpg",
+  "nomChaton": "Astréa",
+  "enfance": "Jeune noble",
+  "caractere": "Orgueilleuse",
+  "donNaissance": "Viatique familial",
+  "costaud": 0,
+  "malin": 0,
+  "mignon": 0,
+  "coeur": 0,
+  "amitie": 0,
+  "or": 0,
+  "argent": 0,
+  "bronze": 0,
+  "talents": [
+  ],
+  "grimoire": [
+  ],
+  "sacVoyage": [
+    "Des vêtements chics",
+    "Un shampoing spécial pelage délicat",
+    "Une canne en marbre finement sculptée",
+    "Un objet 'bling bling'"
+  ],
+  "experienceActuelle": 0,
+  "experienceTotale": 0
 }

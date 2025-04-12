@@ -1,4 +1,3 @@
-import './styles/description.module.scss'
 import verticalBackgroundImage from './assets/vertical_background.png'
 import styles from "./styles/interfaceJoueuse.module.scss";
 import ChatonDescription from "./ChatonDescription.tsx";
@@ -9,7 +8,7 @@ import ChatonSacVoyage from "./ChatonSacVoyage.tsx";
 import Experience from "./Experience.tsx";
 import {InformationJoueuseDTO} from "./IInformationJoueuse.ts";
 import { useState, useEffect, useRef } from "react";
-import { MessageCircle } from 'lucide-react';
+import {Cat, MessageCircle} from 'lucide-react';
 import ChatBox from './ChatBox.tsx';
 import { connectChat, canSendMessage, reconnectChat } from './chat';
 
@@ -165,7 +164,7 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
                 <span className={`${styles.connectionIndicator} ${connectionStatus ? styles.connected : styles.disconnected}`}></span>
                 <button className={styles.chatButton} onClick={openModal}>
                     <MessageCircle size={60}/>
-                    {hasUnreadMessages && <span className={styles.notificationDot}></span>}
+                    {hasUnreadMessages && <Cat size={"1.3rem"} className={styles.notificationIcon}/>}
                 </button>
             </div>
             

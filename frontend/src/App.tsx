@@ -12,6 +12,10 @@ const App: React.FC = () => {
     const [isAuthentify, setIsAuthentify] = useState<boolean>(false);
     const [informationsJoueuse, setInformationJoueuse] = useState<InformationJoueuseDTO | null>(null);
 
+    // TODO : ajouter click outside PopIn
+    // TODO : Retour vers l'accueil
+    // TODO : Autocomplete position up
+
     useEffect(() => {
         const saveInfoJoueuse = async () => {
             if (informationsJoueuse) {

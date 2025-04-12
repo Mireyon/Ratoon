@@ -1,21 +1,29 @@
 {
-  "nomJoueuse" : "Rémy",
-  "imageName" : "Simba.jpg",
-  "nomChaton" : "Simba",
-  "enfance" : "Raton",
-  "caractere" : "Téméraire",
-  "donNaissance" : "Petit",
-  "costaud" : 3,
-  "malin" : 4,
-  "mignon" : 5,
-  "coeur" : 5,
-  "amitie" : 5,
-  "or" : 0,
-  "argent" : 0,
-  "bronze" : 0,
-  "talents" : [ "Trouver une information", "Se cacher dans les ombres", "Soigner blessures et maladies" ],
-  "grimoire" : [ "Gosier sans fond / Costaud (2)", "Invocation d'outils / Malin (2)" ],
-  "sacVoyage" : [ "Cape indéchirable couleur passe-partout", "Longue corde de soie d'araignée", "Pince coupe-tout", "Petit tapis épais et confortable", "Rouleau adhésif de réparation", "Toto", "ffz", "fzef" ],
-  "experienceActuelle" : 3,
-  "experienceTotale" : 6
+  "nomJoueuse": "Rémy",
+  "imageName": "Simba.jpg",
+  "nomChaton": "Simba",
+  "enfance": "Raton",
+  "caractere": "Téméraire",
+  "donNaissance": "Petit",
+  "costaud": 0,
+  "malin": 0,
+  "mignon": 0,
+  "coeur": 0,
+  "amitie": 0,
+  "or": 0,
+  "argent": 0,
+  "bronze": 0,
+  "talents": [
+  ],
+  "grimoire": [
+  ],
+  "sacVoyage": [
+    "Cape indéchirable couleur passe-partout",
+    "Longue corde de soie d'araignée",
+    "Pince coupe-tout",
+    "Petit tapis épais et confortable",
+    "Rouleau adhésif de réparation"
+  ],
+  "experienceActuelle": 0,
+  "experienceTotale": 0
 }
