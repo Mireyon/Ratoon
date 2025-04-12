@@ -1,0 +1,258 @@
+@import 'global';
+
+:root {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0; /* ✅ Évite tout espace supplémentaire */
+    overflow-x: hidden; /* ✅ Supprime la scrollbar horizontale */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.appContainer {
+    width: 100vw;
+    height: auto;
+    position: relative; /* Ensure the container can hold the content properly */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    background-color: #F7E7C8;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.insideContainer {
+    position: absolute;
+    top: 8%; /* 15% from the top */
+    left: 19%; /* 10% from the left */
+    right: 19%; /* 10% from the right */
+    height: 82%;
+    overflow:hidden;
+    /* background-color: #F4E4C2; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Chat Button styles */
+.chatButtonContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.chatButton {
+    width: 60px;
+    height: 60px;
+    background-color: $color-green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative; /* Added for positioning the notification dot */
+}
+
+.chatButton:hover {
+    transform: scale(1.1);
+    background-color: #689a3c;
+}
+
+/* Notification dot for unread messages */
+.notificationDot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: $color-red; /* Red color */
+    border-radius: 50%;
+    border: 2px solid white; /* White border for better visibility */
+    animation: pulse 1.5s infinite; /* Add pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 $color-red;
+    }
+    
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(255, 0, 0, 0);
+    }
+    
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+.connectionIndicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 1.5rem 0.4rem 0 0;
+    //margin-right: 8px;
+}
+
+.connected {
+    background-color: #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+}
+
+.disconnected {
+    background-color: #f44336;
+    box-shadow: 0 0 8px #f44336;
+}
+
+/* Modal styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.modalContent {
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: $color-blue;
+    color: white;
+}
+
+.modalHeader h3 {
+    margin: 0;
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modalBody {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Reconnect button styles */
+.reconnectButton {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+    animation: pulsate 1.5s infinite alternate;
+}
+
+.reconnectButton:hover {
+    background-color: #d32f2f;
+    transform: translateX(-50%) scale(1.05);
+}
+
+@keyframes pulsate {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*  Écran moyen (Tablette) */
+@media screen and (max-width: 1024px) {
+    .appContainer {
+        display: grid;
+    }
+
+    .leftContainer {
+        margin: 6rem 0 0 5rem;
+        margin-top: 15vh;
+        padding-left: 8vw;
+    }
+
+    .rightContainer {
+        margin: 5.6rem 0 8rem 10rem;
+
+    }
+}
+
+/*  Grand écran (Desktop) */
+@media screen and (min-width: 1024px) {
+    .appContainer {
+        display: flex;
+    }
+
+    .leftContainer {
+        flex: 1.65;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+
+    .rightContainer {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5.6rem 4rem 0 4rem;
+        padding-right: 5vw;
+    }
+
+}
