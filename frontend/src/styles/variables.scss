@@ -1,2 +1,21 @@
-$font-title: "Delius", cursive;
-$font-text: "Goudy Old Style", serif;
+@import '@fontsource/delius';
+@import '@fontsource/emilys-candy';
+
+$font-title: "Emilys Candy", cursive;
+$font-text: "Delius", cursive;
+
+$color-red: #E5745F;
+$color-blue: #6B89BE;
+$color-blue-light: #A0BFE4;
+$color-green: #79B546;
+$color-green-light: #C9DFB3;
+$color-pink: #DFB5D3;
+$color-pink-light: #EED7E9;
+$color-yellow: #FBB944;
+$color-yellow-light: #FDEDBA;
+
+
+$background-lighter: #FFFFFF;
+$background-light: #FFFCF7;
+$background-inter: #EFDCBA;
+$background-dark: #CCAC86;

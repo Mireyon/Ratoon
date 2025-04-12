@@ -6,7 +6,11 @@
     align-items: center;
     background-color: #F9F6EA; /* Fond beige */
     position: relative;
-    width: 65%; /* Ensure it takes full width of its container */
+    width: 80%;
+}
+
+.page{
+    background-color: $background-lighter;
 }
 
 .page::before {
@@ -16,7 +20,7 @@
     left: 2rem;
     width: 2px;
     height: 100%;
-    background-color: #CCAC86; /* Couleur assortie aux lignes */
+    background-color: $background-dark; /* Couleur assortie aux lignes */
 }
 
 .hole {
@@ -24,6 +28,7 @@
     left: 0.7rem;
     width: 8px;
     height: 8px;
-    border: 2px solid #CCAC86;
+    border: 2px solid $background-dark;
     border-radius: 50%;
+    background-color: $background-light;
 }

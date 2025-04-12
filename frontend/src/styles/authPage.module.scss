@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #EFDCBA;
+    background-color: $background-inter;
 }
 
 .headerContainer {
@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
 }
 
 .headerImage {
-    background-color: #EFDCBA;
+    background-color: $background-inter;
     width: 100%;
     height: auto;
     display: block;
@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #EFDCBA;
+    background-color: $background-inter;
     width: 100vw;
     height: 100vh;
     padding: 1rem;
@@ -54,8 +54,7 @@ body::-webkit-scrollbar {
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: #61462A;
-    font-weight: 800;
-    font-size: 2rem !important;
+    font-weight: bold;
     word-wrap: break-word;
     max-width: 90vw;
 }
@@ -87,7 +86,7 @@ body::-webkit-scrollbar {
 }
 
 .imageBox:hover {
-    border: 4px solid #CCAC86;
+    border: 4px solid $background-dark;
     transition: border 0.3s ease-in-out;
 }
 
@@ -105,21 +104,23 @@ body::-webkit-scrollbar {
 
 .button {
     padding-left: 2.5rem;
-    background-color: #CCAC86;
-    color: #EFDCBA;
+    background-color: $background-dark;
+    color: $background-inter;
     border: none;
     font-size: 1rem;
 }
 
 .button:hover, .button:active {
     transform: scale(1.1);
-    background-color: #EFDCBA;
-    color: #CCAC86;
-    border: 0.1rem solid #CCAC86;
+    background-color: $background-inter;
+    color: $background-dark;
+    border: 0.1rem solid $background-dark;
 }
 
 .buttonContent {
     display: flex;
+    font-family: $font-text;
+    font-size: 1rem;
     align-items: center;
     gap: 8px; /* Espace entre le texte et l'icône */
     position: relative;

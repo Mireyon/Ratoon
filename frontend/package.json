@@ -13,6 +13,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@fontsource/delius": "^5.2.5",
+    "@fontsource/emilys-candy": "^5.2.5",
     "@mui/material": "^7.0.1",
     "@stomp/stompjs": "^7.1.1",
     "axios": "^1.8.4",

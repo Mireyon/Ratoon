@@ -16,35 +16,35 @@
 .costaud {
     display: flex;
     align-self: center;
-    color: #E5745F;
+    color: $color-red;
     font-size: 20px;
 }
 
 .malin {
     display: flex;
     align-self: center;
-    color: #6B89BE;
+    color: $color-blue;
     font-size: 20px;
 }
 
 .mignon {
     display: flex;
     align-self: center;
-    color: #79B546;
+    color: $color-green;
     font-size: 20px;
 }
 
 .coeur {
     display: flex;
     align-self: center;
-    color: #DFB5D3;
+    color: $color-pink;
     font-size: 20px;
 }
 
 .amitie {
     display: flex;
     align-self: center;
-    color: #FBB944;
+    color: $color-yellow;
     font-size: 20px;
 }
 

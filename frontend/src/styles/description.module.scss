@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 1.5rem;
-    border: 0.1rem solid #CCAC86;
+    border: 0.1rem solid $background-dark;
     padding: 0.8rem;
-    background-color: #FFFCF7;
+    background-color: $background-light;
     display: flex;
 }
 
@@ -32,7 +32,7 @@
 
 .variable {
     padding: 0.5rem 0.5rem;
-    color: #CCAC86;
+    color: $background-dark;
     font-family: $font-text;
     font-weight: bold;
 }

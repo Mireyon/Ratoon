@@ -1,146 +1,150 @@
 @import 'global';
 
 .sac {
-    display: flex;
-    flex-direction: column;
-    border-radius: 1rem;
-    align-items: center;
-    background-color: #F9F6EA; /* Fond beige */
-    position: relative;
-    width: 95%; /* Ensure it takes full width of its container */
-    max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  align-items: center;
+  background-color: $background-light;
+  position: relative;
+  width: 95%;
+  max-width: 100%;
+}
+
+.right {
+    justify-items: center;
 }
 
 .page {
-    border-radius: 1rem;
-    padding:0;
+  border-radius: 1rem;
+  padding: 0;
 }
 
 .firstLine {
-    border-bottom: 0.1rem solid #CCAC86;
-    padding: 7px 0;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-    overflow: hidden; /* Assure que le contenu suit le border-radius */
+  border-bottom: 0.1rem solid #CCAC86;
+  padding: 7px 0;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  overflow: hidden; /* Assure que le contenu suit le border-radius */
 }
 
 .box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.2rem 0.2rem;
-    min-height: 2rem;
-    font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.2rem 0.2rem;
+  min-height: 2rem;
+  font-size: 0.8rem;
 }
 
 .sacIconLeft {
-    position: absolute;
-    top: 1.5rem;
-    left: 10%;
-    height: 3rem;
-    width: auto;
+  position: absolute;
+  top: 3rem;
+  left: 10%;
+  height: 3rem;
+  width: auto;
 }
 
 .sacIconRight {
-    position: absolute;
-    top: 1.5rem;
-    right: 10%;
-    height: 3rem;
-    width: auto;
+  position: absolute;
+  top: 3rem;
+  right: 10%;
+  height: 3rem;
+  width: auto;
 }
 
-.description{
-    display: flex;
-    margin: 0.5rem 1rem;
-    text-align: center;
-    font-family: $font-text;
-    font-size: 1rem;
+.description {
+  display: flex;
+  margin: 0.5rem 1rem;
+  text-align: center;
+  font-family: $font-text;
+  font-size: 1rem;
 }
 
 .addButton {
-    display: flex;
-    background: none;
-    border: none;
-    cursor: pointer;
-    align-items: start;
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: start;
 }
 
 .popup {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  min-width: 300px;
 }
 
 .input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .editBtn,
 .deleteBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .editBtn:hover {
-    transform: scale(1.1);
-    color: #007bff;
+  transform: scale(1.1);
+  color: #007bff;
 }
 
 .deleteBtn:hover {
-    transform: scale(1.1);
-    color: #d9534f;
+  transform: scale(1.1);
+  color: #d9534f;
 }
 
 .coinsContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 15px 10px;
-    width: calc(100% - 20px);
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 15px 10px;
+  width: calc(100% - 20px);
+  flex-wrap: wrap;
 }
 
 .coinBox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #FFFCF7;
-    padding: 8px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    min-width: 80px;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $background-lighter;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 80px;
+  justify-content: center;
 }
 
 .coinBox span {
-    font-size: 18px;
-    font-weight: bold;
-    min-width: 20px;
-    text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
 }
 
 .coinBox button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    transition: transform 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
 }
 
 .coinBox button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .coinBox button:active {
-    transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 

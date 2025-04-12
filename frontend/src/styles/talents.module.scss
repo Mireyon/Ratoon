@@ -1,12 +1,15 @@
 @import 'global';
 
+.page{
+    background-color: $background-lighter
+}
+
 .talent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #F9F6EA; /* Fond beige */
     position: relative;
-    width: 65%;
+    width: 80%;
 }
 
 .line {

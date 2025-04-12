@@ -2,8 +2,8 @@
 
 .title {
     font-family: $font-title;
-    font-size: 20px !important;
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 2.5rem !important;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -17,10 +17,10 @@
 }
 
 .box {
-    border: 0.1rem solid #CCAC86;
+    border: 0.1rem solid $background-dark;
     padding: 0.2rem 1rem;
     border-radius: 1.5rem;
-    background-color: #FFFCF7;
+    background-color: $background-lighter;
 }
 
 .page {
@@ -29,8 +29,8 @@
     border-radius: 5px;
     padding: 5px 10px 10px 10px;
     position: relative;
-    background-color: #FFFCF7;
-    border: 0.1rem solid #CCAC86;
+    background-color: $background-light;
+    border: 0.1rem solid $background-dark;
 }
 
 .left {
@@ -44,9 +44,8 @@
 
 .right {
     display: flex;
-    flex: 5;
-    margin-right: 3rem;
-    justify-content: center;
+    margin-right: 4rem;
+    justify-items: center;
 }
 
 .controls {
@@ -100,7 +99,7 @@
 }
 
 .addBtn {
-    background-color: #79B546;
+    background-color: $color-green;
     color: white;
 }
 
@@ -117,6 +116,7 @@
 }
 
 .cancelBtn {
-    background-color: #E5745F;
+    background-color: $color-red;
     color: white;
 }
+

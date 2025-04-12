@@ -56,7 +56,7 @@ body::-webkit-scrollbar {
 .chatButton {
     width: 60px;
     height: 60px;
-    background-color: #4CAF50;
+    background-color: $color-green;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ body::-webkit-scrollbar {
 
 .chatButton:hover {
     transform: scale(1.1);
-    background-color: #45a049;
+    background-color: #689a3c;
 }
 
 /* Notification dot for unread messages */
@@ -81,7 +81,7 @@ body::-webkit-scrollbar {
     right: 0;
     width: 12px;
     height: 12px;
-    background-color: #ff0000; /* Red color */
+    background-color: $color-red; /* Red color */
     border-radius: 50%;
     border: 2px solid white; /* White border for better visibility */
     animation: pulse 1.5s infinite; /* Add pulse animation */
@@ -90,7 +90,7 @@ body::-webkit-scrollbar {
 @keyframes pulse {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+        box-shadow: 0 0 0 0 $color-red;
     }
     
     70% {
@@ -108,7 +108,8 @@ body::-webkit-scrollbar {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    margin-right: 8px;
+    margin: 1.5rem 0.4rem 0 0;
+    //margin-right: 8px;
 }
 
 .connected {
@@ -153,7 +154,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #084cca;
+    background-color: $color-blue;
     color: white;
 }
 
