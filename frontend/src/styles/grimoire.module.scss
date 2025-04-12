@@ -1,0 +1,29 @@
+@import 'global';
+
+.grimoire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F6EA; /* Fond beige */
+    position: relative;
+    width: 65%; /* Ensure it takes full width of its container */
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: 2px;
+    height: 100%;
+    background-color: #CCAC86; /* Couleur assortie aux lignes */
+}
+
+.hole {
+    position: absolute;
+    left: 0.7rem;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #CCAC86;
+    border-radius: 50%;
+}

@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import style from "./styles/sacVoyage.module.css";
+import style from "./styles/sacVoyage.module.scss";
 import Sac from "../public/sac.tsx";
 import {Coins, Delete, Minus, PackagePlus, Pen, Plus} from "lucide-react";
 import {InformationJoueuseDTO} from "./IInformationJoueuse.ts";

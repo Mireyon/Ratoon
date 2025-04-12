@@ -1,0 +1,9 @@
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0; /* ✅ Évite tout espace supplémentaire */
+    overflow-x: hidden; /* ✅ Supprime la scrollbar horizontale */
+}

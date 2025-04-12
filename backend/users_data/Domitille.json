@@ -13,8 +13,8 @@
   "or" : 0,
   "argent" : 0,
   "bronze" : 0,
-  "talents" : [ ],
-  "grimoire" : [ ],
+  "talents" : [ "Bricoler des trucs et des machins" ],
+  "grimoire" : [ "Motte de terre / Costaud (1)" ],
   "sacVoyage" : [ "Des vêtements chics", "Un shampoing spécial pelage délicat", "Une canne en marbre finement sculptée", "Un objet 'bling bling'" ],
   "experienceActuelle" : 4,
   "experienceTotale" : 55

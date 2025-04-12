@@ -1,4 +1,4 @@
-import styles from "./styles/authPage.module.css";
+import styles from "./styles/authPage.module.scss";
 import headerImage from './assets/header.png'
 import { Cat } from "lucide-react";
 import { InformationJoueuseDTO } from "./IInformationJoueuse.ts";

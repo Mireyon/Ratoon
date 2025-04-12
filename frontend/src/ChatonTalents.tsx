@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import style from './styles/talents.module.css';
+import style from './styles/talents.module.scss';
 import { PackagePlus } from "lucide-react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";

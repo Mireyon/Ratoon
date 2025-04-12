@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { sendPrivateMessage, canSendMessage } from './chat';
-import styles from './styles/chatBox.module.css';
+import styles from './styles/chatBox.module.scss';
 
 // List of players from AuthPage
 const PLAYERS = ['Joséphine', 'Alice', 'Domitille', 'Marion', 'Rémy'];

@@ -1,6 +1,5 @@
-import './styles/description.module.css'
 import { useEffect, useRef, useState } from "react";
-import style from "./styles/grimoire.module.css";
+import style from "./styles/grimoire.module.scss";
 import { PackagePlus } from "lucide-react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";

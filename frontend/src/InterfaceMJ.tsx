@@ -1,4 +1,4 @@
-import './styles/description.module.css'
+import './styles/description.module.scss'
 
 const InterfaceMJ = () => {
     return (

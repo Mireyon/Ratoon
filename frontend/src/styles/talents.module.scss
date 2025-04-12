@@ -1,0 +1,14 @@
+@import 'global';
+
+.talent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F6EA; /* Fond beige */
+    position: relative;
+    width: 65%;
+}
+
+.line {
+    text-align: center;
+}

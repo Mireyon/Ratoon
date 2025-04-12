@@ -1,4 +1,4 @@
-import style from "./styles/experience.module.css";
+import style from "./styles/experience.module.scss";
 import {Minus, Plus} from "lucide-react";
 import {InformationJoueuseDTO} from "./IInformationJoueuse.ts";
 

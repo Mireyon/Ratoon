@@ -1,8 +1,4 @@
-.container {
-    display: flex;
-    gap: 20px;
-    padding: 2rem;
-}
+@import 'global';
 
 .photoContainer {
     width: 30%;
@@ -24,7 +20,8 @@
 }
 
 .infoContainer {
-    font-family: "Franklin Gothic Demi Cond", fantasy;
+    font-family: $font-title;
+    font-weight: bold;
     width: 70%;
     border-radius: 1.5rem;
     display: flex;
@@ -32,29 +29,11 @@
     gap: 15px;
 }
 
-.chaton-box {
-    border: 0.1rem solid #CCAC86;
-    border-radius: 1.5rem;
-    padding: 0.5rem 0.5rem;
-}
-
-.details-box {
-    border: 0.1rem solid #CCAC86;
-    padding: 0.7rem 0.5rem;
-    border-radius: 1.5rem;
-}
-
-.box {
-    border: 0.1rem solid #CCAC86;
-    padding: 0.2rem 1rem;
-    border-radius: 1.5rem;
-    background-color: #FFFCF7;
-}
 .variable {
     padding: 0.5rem 0.5rem;
     color: #CCAC86;
-    font-family: "Goudy Old Style", serif;
-    font-weight: bolder;
+    font-family: $font-text;
+    font-weight: bold;
 }
 
 

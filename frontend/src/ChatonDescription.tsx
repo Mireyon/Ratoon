@@ -1,4 +1,4 @@
-import styles from './styles/description.module.css'
+import styles from './styles/description.module.scss'
 import {InformationJoueuseDTO} from "./IInformationJoueuse.ts";
 import { useEffect, useState } from 'react';
 import {getImageChatonAPI} from "./ChatonAPI.tsx";
@@ -47,6 +47,7 @@ const ChatonDescription: React.FC<ChatonDescriptionProps> = ({informationJoueuse
                     <img
                         src={imageSrc}
                         alt="Chaton ou joueuse"
+                        style={{borderRadius: '1rem'}}
                         className={styles.fullHeightImage}
                     />
                 ) : (

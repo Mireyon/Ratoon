@@ -1,18 +1,13 @@
-.container {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-}
+@import 'global';
 
 .title{
-    margin-top: 1rem;
-    font-family: "Franklin Gothic Demi Cond", fantasy;
     font-size: 30px;
+    font-weight: bold;
 }
 
 .quality {
-    font-family: "Franklin Gothic Demi Cond", fantasy;
+    font-family: $font-title;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;

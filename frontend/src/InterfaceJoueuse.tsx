@@ -1,6 +1,6 @@
-import './styles/description.module.css'
+import './styles/description.module.scss'
 import verticalBackgroundImage from './assets/vertical_background.png'
-import styles from "./styles/interfaceJoueuse.module.css";
+import styles from "./styles/interfaceJoueuse.module.scss";
 import ChatonDescription from "./ChatonDescription.tsx";
 import ChatonQualites from "./ChatonQualites.tsx";
 import ChatonTalents from "./ChatonTalents.tsx";

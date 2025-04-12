@@ -1,4 +1,4 @@
-import style from './styles/qualites.module.css'
+import style from './styles/qualites.module.scss'
 import Costaud from "../public/Costaud.tsx";
 import Malin from "../public/Malin.tsx";
 import Mignon from "../public/Mignon.tsx";

@@ -1,3 +1,5 @@
+@import 'global';
+
 :root {
     height: 100%;
     width: 100%;
@@ -51,10 +53,9 @@ body::-webkit-scrollbar {
 .title {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-family: "Delius", cursive;
     color: #61462A;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 2rem !important;
     word-wrap: break-word;
     max-width: 90vw;
 }
