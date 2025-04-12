@@ -27,10 +27,12 @@ const ChatonSacVoyage: React.FC<ChatonSacVoyageProps> = ({informationJoueuse, se
 
         if (showPopup) {
             document.addEventListener("mousedown", handleClickOutside);
+            document.body.style.overflow = 'hidden';
         }
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+            document.body.style.overflow = '';
         };
     }, [showPopup]);
 

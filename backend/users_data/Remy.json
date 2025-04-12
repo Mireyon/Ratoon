@@ -9,13 +9,13 @@
   "malin" : 4,
   "mignon" : 5,
   "coeur" : 5,
-  "amitie" : 3,
+  "amitie" : 5,
   "or" : 0,
   "argent" : 0,
   "bronze" : 0,
-  "talents" : [ "Trouver une information", "Se cacher dans les ombres" ],
+  "talents" : [ "Trouver une information", "Se cacher dans les ombres", "Soigner blessures et maladies" ],
   "grimoire" : [ "Gosier sans fond / Costaud (2)", "Invocation d'outils / Malin (2)" ],
   "sacVoyage" : [ "Cape indéchirable couleur passe-partout", "Longue corde de soie d'araignée", "Pince coupe-tout", "Petit tapis épais et confortable", "Rouleau adhésif de réparation", "Toto", "ffz", "fzef" ],
-  "experienceActuelle" : 0,
-  "experienceTotale" : 0
+  "experienceActuelle" : 3,
+  "experienceTotale" : 6
 }

@@ -40,10 +40,12 @@ const ChatonGrimoire: React.FC<ChatonGrimoireProps> = ({ informationJoueuse, set
 
         if (showPopup) {
             document.addEventListener("mousedown", handleClickOutside);
+            document.body.style.overflow = 'hidden';
         }
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+            document.body.style.overflow = '';
         };
     }, [showPopup]);
 

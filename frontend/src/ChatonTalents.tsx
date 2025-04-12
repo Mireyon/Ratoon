@@ -14,7 +14,7 @@ interface ChatonTalentsProps {
 const ChatonTalents: React.FC<ChatonTalentsProps> = ({ informationJoueuse, setInformationJoueuse }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [newItem, setNewItem] = useState("");
-  const minLines = 3;
+  const minLines = 5;
 
   const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -31,10 +31,14 @@ const ChatonTalents: React.FC<ChatonTalentsProps> = ({ informationJoueuse, setIn
 
       if (showPopup) {
           document.addEventListener("mousedown", handleClickOutside);
+          // Disable scrolling on the parent when popup is shown
+          document.body.style.overflow = 'hidden';
       }
 
       return () => {
           document.removeEventListener("mousedown", handleClickOutside);
+          // Re-enable scrolling when component unmounts or popup is closed
+          document.body.style.overflow = '';
       };
   }, [showPopup]);
 

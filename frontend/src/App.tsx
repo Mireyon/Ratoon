@@ -70,12 +70,12 @@ const App: React.FC = () => {
                                 setIsAuthentify={setIsAuthentify}
                             />
                         ) : (
-                            <Navigate to={selectedJoueuse === "Joséphine" ? "/MJ" : "/joueuse"}/>
+                            <Navigate to={selectedJoueuse === "Josephine" ? "/MJ" : "/joueuse"}/>
                         )
                     }/>
 
                     <Route path="/MJ" element={
-                        isAuthentify && selectedJoueuse === "Joséphine" ? (
+                        isAuthentify && selectedJoueuse === "Josephine" ? (
                             <div className={styles.authContainer}>
                                 <InterfaceMJ/>
                             </div>
@@ -85,7 +85,7 @@ const App: React.FC = () => {
                     }/>
 
                     <Route path="/joueuse" element={
-                        isAuthentify && selectedJoueuse && selectedJoueuse !== "Joséphine" ? (
+                        isAuthentify && selectedJoueuse && selectedJoueuse !== "Josephine" ? (
                             <InterfaceJoueuse informationsJoueuse={informationsJoueuse}
                                               setInformationJoueuse={setInformationJoueuse}/>
                         ) : (

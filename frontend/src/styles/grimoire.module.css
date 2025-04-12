@@ -4,7 +4,7 @@
     align-items: center;
     background-color: #F9F6EA; /* Fond beige */
     position: relative;
-    margin: 0 1rem;
+    width: 65%; /* Ensure it takes full width of its container */
 }
 
 .container {

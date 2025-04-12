@@ -16,6 +16,6 @@
   "talents" : [ "Cuisiner", "Feuler et menacer" ],
   "grimoire" : [ "Hardiesse / Costaud (1)", "Gosier sans fond / Costaud (2)" ],
   "sacVoyage" : [ "Une armure", "Une lance de garde", "Baumes cicatrisnts pour guérir plus vite", "Une pipe et de l'herbe a pipe (volées au sergent)", "Sauce piquante pour mettre sur ses plats" ],
-  "experienceActuelle" : 0,
-  "experienceTotale" : 0
+  "experienceActuelle" : 1,
+  "experienceTotale" : 2
 }

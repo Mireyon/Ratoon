@@ -24,11 +24,13 @@ interface ChatMessage {
   content: string;
   timestamp?: string;
   clientId?: string;
+  read?: boolean;
 }
 
 const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse, setInformationJoueuse}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [messages, setMessages] = useState<ChatMessage[]>([]);
+    const [hasUnreadMessages, setHasUnreadMessages] = useState(false);
     const [connectionStatus, setConnectionStatus] = useState(false);
     const connectionAttempts = useRef(0);
     const processedMessageIds = useRef<Set<string>>(new Set());
@@ -39,6 +41,14 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
         if (isModalOpen) {
             // Disable scrolling on the body
             document.body.style.overflow = 'hidden';
+            
+            // Mark all messages as read when modal is opened
+            if (hasUnreadMessages) {
+                setMessages(prevMessages => 
+                    prevMessages.map(msg => ({ ...msg, read: true }))
+                );
+                setHasUnreadMessages(false);
+            }
         } else {
             // Re-enable scrolling when modal is closed
             document.body.style.overflow = 'auto';
@@ -48,7 +58,7 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [isModalOpen]);
+    }, [isModalOpen, hasUnreadMessages]);
 
     // Establish chat connection as soon as the component mounts
     useEffect(() => {
@@ -69,7 +79,19 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
             
             // Only add if message is relevant to current user
             if (newMessage.sender === currentUser || newMessage.recipient === currentUser) {
-                setMessages((prevMessages) => [...prevMessages, {...newMessage, clientId: messageId}]);
+                // Set read status: messages from others are unread; messages sent by current user are read
+                const isMessageUnread = newMessage.sender !== currentUser && !isModalOpen;
+                
+                // Add the message to state with read status
+                setMessages((prevMessages) => [
+                    ...prevMessages, 
+                    {...newMessage, clientId: messageId, read: !isMessageUnread}
+                ]);
+                
+                // If it's a new incoming message and modal is closed, mark that we have unread messages
+                if (isMessageUnread) {
+                    setHasUnreadMessages(true);
+                }
             }
         };
         
@@ -98,7 +120,7 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
         return () => {
             clearInterval(intervalId);
         };
-    }, [currentUser]);
+    }, [currentUser, isModalOpen]);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -125,6 +147,7 @@ const InterfaceJoueuse: React.FC<InterfaceJoueuseProps> = ({informationsJoueuse,
                 <span className={`${styles.connectionIndicator} ${connectionStatus ? styles.connected : styles.disconnected}`}></span>
                 <button className={styles.chatButton} onClick={openModal}>
                     <MessageCircle size={60}/>
+                    {hasUnreadMessages && <span className={styles.notificationDot}></span>}
                 </button>
             </div>
             

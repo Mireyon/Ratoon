@@ -12,6 +12,7 @@ interface ChatMessage {
   content: string;
   timestamp?: string;  // Optional timestamp from server
   clientId?: string;   // Client-generated ID to prevent duplicates
+  read?: boolean;      // Whether the message has been read
 }
 
 interface ChatBoxProps {
@@ -34,6 +35,7 @@ const ChatBox = ({
     const [recipient, setRecipient] = useState("");
     const [availableRecipients, setAvailableRecipients] = useState<string[]>([]);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const [prevRecipient, setPrevRecipient] = useState<string | null>(null);
     
     // Scroll to bottom when messages change
     const scrollToBottom = () => {
@@ -44,7 +46,7 @@ const ChatBox = ({
       scrollToBottom();
     }, [filteredMessages]);
     
-    // Update filtered messages whenever messages or recipient changes
+    // Effect to ONLY filter messages - doesn't update any state outside filtering
     useEffect(() => {
       if (recipient) {
         const filtered = messages.filter(message => 
@@ -56,6 +58,23 @@ const ChatBox = ({
         setFilteredMessages([]);
       }
     }, [messages, recipient, currentUser]);
+    
+    // Separate effect to handle marking messages as read when recipient changes
+    useEffect(() => {
+      // Only run this when recipient actually changes (not on first render)
+      if (recipient && recipient !== prevRecipient) {
+        setPrevRecipient(recipient);
+        
+        // Mark all messages from this recipient as read
+        setMessages(prevMessages =>
+          prevMessages.map(msg =>
+            msg.sender === recipient && msg.recipient === currentUser
+              ? { ...msg, read: true }
+              : msg
+          )
+        );
+      }
+    }, [recipient, currentUser, setMessages]);
     
     useEffect(() => {
       if (!currentUser) return;
@@ -83,10 +102,13 @@ const ChatBox = ({
       return preview;
     };
 
-    // Count unread messages (simple implementation)
-    const getUnreadCount = (_user: string) => {
-      // This is a placeholder. In a real app, you'd track read/unread state
-      return 0;
+    // Count unread messages for a user
+    const getUnreadCount = (user: string) => {
+      return messages.filter(m => 
+        m.sender === user && 
+        m.recipient === currentUser && 
+        m.read === false
+      ).length;
     };
 
     const handleSend = () => {
@@ -101,12 +123,13 @@ const ChatBox = ({
         
         const success = sendPrivateMessage(currentUser, recipient, input, clientId);
         if (success) {
-          // Create the message object
+          // Create the message object with read=true since it's sent by current user
           const newMessage = { 
             sender: currentUser, 
             recipient, 
             content: input, 
-            clientId 
+            clientId,
+            read: true 
           };
           
           // Mark this message as processed to avoid duplication when received from server
@@ -125,6 +148,12 @@ const ChatBox = ({
       }
     };
 
+    // Handle clicking on a recipient to mark their messages as read
+    const handleRecipientClick = (user: string) => {
+      setRecipient(user);
+      // Note: The marking as read is handled in the useEffect that watches recipient changes
+    };
+
     return (
       <div className={styles.chatContainer}>
         {/* Left panel with user list */}
@@ -139,7 +168,7 @@ const ChatBox = ({
           {availableRecipients.map((user) => (
             <div 
               key={user}
-              onClick={() => setRecipient(user)}
+              onClick={() => handleRecipientClick(user)}
               className={`${styles.userItem} ${recipient === user ? styles.activeUser : ''}`}
             >
               <div className={styles.userName}>{user}</div>

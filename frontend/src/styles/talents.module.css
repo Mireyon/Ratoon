@@ -4,6 +4,7 @@
     align-items: center;
     background-color: #F9F6EA; /* Fond beige */
     position: relative;
+    width: 65%;
 }
 
 .container {
@@ -48,6 +49,7 @@
     font-size: 0.8rem;
     padding: 0.2rem 1rem;
     border-bottom: 0.1rem solid #CCAC86;
+    text-align: center;
 }
 
 .text{
